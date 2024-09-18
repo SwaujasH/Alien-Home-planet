@@ -1,0 +1,127 @@
+@keyframes fadein {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+body {
+    font-family: "IBM Plex Mono";
+    font-size: 16px;
+    line-height: 1.5;
+
+    background-color: #140e3c;
+    color: white;
+
+    height: 8000px;
+    padding: 32px;
+
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(155,155,155,0.5) ;
+    border-radius: 20px;
+    border: transparent;
+}
+
+div.main-scene {
+    animation: fadein 1s 1s both;
+    
+}
+
+header, section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    min-height: 100vh;
+    pointer-events: none;
+    
+}
+
+header svg {
+    max-height: 400px;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 32px 0 0 0 ;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+section.scene svg{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 700vh;
+    max-width: none;
+
+    pointer-events: none;
+}
+
+.section-svg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    
+    padding: 32px;
+    
+}
+
+.section-svg svg{
+    max-width: 100%;
+    max-height: 100%;
+    align-items: center;
+}
+
+
+.section-svg svg g#scene {
+    opacity: 1;
+    transition: opacity 0.25s;
+}
+
+.section-svg svg:hover g#scene {
+    opacity:0.25;
+}
+
+div.label {
+    position: fixed;
+    background-color: white;
+    color: #140e3c;
+    padding: 8px 16px 8px 16px;
+    top: 45px;
+    left: 20px;
+    pointer-events: none;
+    
+    visibility: hidden;
+    opacity: 0;
+}
+
+div.label.is-visible {
+    
+    visibility: visible;
+    opacity: 1;
+}
